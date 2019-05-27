@@ -1,5 +1,5 @@
 package main
-require github.com/suwitna/gopl/ch1
+
 import (
 	"log"
 	"net/http"
