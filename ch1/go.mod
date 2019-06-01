@@ -1,1 +1,0 @@
-module github.com/suwitna/gopl/ch1

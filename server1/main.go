@@ -1,6 +1,7 @@
-package main
+package server1
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 )
@@ -12,6 +13,5 @@ func main() {
 
 // handler echoes the Path component of the request URL r.
 func handler(w http.ResponseWriter, r *http.Request) {
-	//fmt.Fprintf(w, "URL.Path = %q\n", r.URL.Path)
-	lissa(w)
+	fmt.Fprintf(w, "URL.Path = %q\n", r.URL.Path)
 }

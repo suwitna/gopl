@@ -1,12 +1,14 @@
-package ch1
+package main
 
 import (
 	"image"
 	"image/color"
 	"image/gif"
 	"io"
+	"log"
 	"math"
 	"math/rand"
+	"net/http"
 )
 
 var palette = []color.Color{color.White, color.Black}
@@ -15,6 +17,17 @@ const (
 	whiteIndex = 0 // first color in palette
 	blackIndex = 1 // next color in palette
 )
+
+func main() {
+	http.HandleFunc("/", handler) // each request calls handler
+	log.Fatal(http.ListenAndServe("localhost:8000", nil))
+}
+
+// handler echoes the Path component of the request URL r.
+func handler(w http.ResponseWriter, r *http.Request) {
+	//fmt.Fprintf(w, "URL.Path = %q\n", r.URL.Path)
+	lissa(w)
+}
 
 func lissa(out io.Writer) {
 	const (
